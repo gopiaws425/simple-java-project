@@ -17,7 +17,7 @@ pipeline {
                     junit 'target/surefire-reports/*.xml'
                    emailext body: 'Test Message',
                              subject: 'Test Subject',
-                             to: 'Gopisdevops1@gmail'
+                             to: 'Gopisdevops1@gmail.com'
                 }
             }
         }
