@@ -15,8 +15,8 @@ pipeline {
             post {
                 always {
                     junit 'target/surefire-reports/*.xml'
-                   emailext body: 'Test Message',
-                             subject: 'Test Subject',
+                   emailext body: '''${SCRIPT,template="groovy-html-larry-refactor.template"}''',
+                             subject: "Job '${env.JOB_NAME} - ${env.BUILD_NUMBER}'",
                              to: 'trupti.ranjan.swain@gmail.com'
                 }
             }
