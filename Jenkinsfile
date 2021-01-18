@@ -15,10 +15,11 @@ pipeline {
             post {
                 always {
                     junit 'target/surefire-reports/*.xml'
+                   emailext body: 'Test Message',
+                             subject: 'Test Subject',
+                             to: 'gopinath425@gmail'
                 }
             }
         }
     }
 }
-    
-
